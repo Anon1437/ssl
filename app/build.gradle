@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.frida.sslbypass'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.frida.sslbypass"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Not an installable app on its own, but we keep it buildable as one
+    // so it can be side-loaded for testing the Xposed hooks directly too.
+    lint {
+        abortOnError false
+    }
+}
+
+dependencies {
+    // Xposed API - compileOnly because LSPosed/EdXposed provides it at runtime
+    compileOnly 'de.robv.android.xposed:api:82'
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Add every package you want this module to hook, one <item> per app.
+      Example: <item>com.fluxicash.app</item>
+      Leave empty (or use the system app trick in LSPosed's own scope UI)
+      if you'd rather pick apps from the LSPosed Manager instead.
+    -->
+    <array name="xposed_scope">
+        <item>com.fluxicash.app</item>
+    </array>
+</resources>
